@@ -6,6 +6,7 @@ class QrCode extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(245, 245, 245, 245),
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.white,
@@ -27,13 +28,13 @@ class QrCode extends StatelessWidget {
                 TextStyle(color: Colors.black, fontWeight: FontWeight.normal),
             textAlign: TextAlign.center),
       ),
-      body: Container(
-        color: const Color.fromARGB(245, 245, 245, 245),
+      body: SingleChildScrollView(
+        padding: EdgeInsets.symmetric(
+          vertical: MediaQuery.of(context).size.height * 0.2,
+          horizontal: MediaQuery.of(context).size.width * 0.1,
+        ),
         child: Center(
           child: Container(
-            margin: const EdgeInsets.symmetric(horizontal: 24),
-            padding: const EdgeInsets.all(10),
-            height: 400,
             decoration: BoxDecoration(
               color: Colors.white,
               boxShadow: [

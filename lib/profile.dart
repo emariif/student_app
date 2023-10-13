@@ -7,68 +7,69 @@ class Profile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: SafeArea(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 240,
-              child: Stack(
-                children: [
-                  Container(
-                    // color: Color.fromARGB(255, 215, 57, 46),
-                    decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                        begin: Alignment.topRight,
-                        end: Alignment.bottomLeft,
-                        colors: [
-                          Color.fromARGB(255, 245, 65, 62),
-                          Color.fromARGB(255, 179, 40, 30),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 240,
+                child: Stack(
+                  children: [
+                    Container(
+                      // color: Color.fromARGB(255, 215, 57, 46),
+                      decoration: const BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.topRight,
+                          end: Alignment.bottomLeft,
+                          colors: [
+                            Color.fromARGB(255, 245, 65, 62),
+                            Color.fromARGB(255, 179, 40, 30),
+                          ],
+                        ),
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      padding: const EdgeInsets.all(30),
+                      child: const Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage('images/profile.png'),
+                            radius: 50,
+                          ),
+                          SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                            'Muhammad Arif Nurhuda',
+                            style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            '0921873109234',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 237, 237, 237)),
+                          ),
+                          SizedBox(
+                            height: 4,
+                          ),
+                          Text(
+                            'Teknik Informatika',
+                            style: TextStyle(
+                                fontSize: 16,
+                                color: Color.fromARGB(255, 237, 237, 237)),
+                          ),
                         ],
                       ),
                     ),
-                    width: MediaQuery.of(context).size.width,
-                    padding: const EdgeInsets.all(30),
-                    child: const Column(
-                      children: [
-                        CircleAvatar(
-                          backgroundImage: AssetImage('images/profile.png'),
-                          radius: 50,
-                        ),
-                        SizedBox(
-                          height: 12,
-                        ),
-                        Text(
-                          'Muhammad Arif Nurhuda',
-                          style: TextStyle(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white),
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          '0921873109234',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromARGB(255, 237, 237, 237)),
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(
-                          'Teknik Informatika',
-                          style: TextStyle(
-                              fontSize: 16,
-                              color: Color.fromARGB(255, 237, 237, 237)),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            Container(
+              Container(
                 padding: const EdgeInsets.all(24),
                 child: Column(
                   children: [
@@ -76,7 +77,7 @@ class Profile extends StatelessWidget {
                     profileList('Alamat', 'JL.Margobasuki no 31B, Dau'),
                     profileList('Tahun Masuk', '2017'),
                     profileList('Status Akademik', 'Aktif'),
-                    const SizedBox(height: 28),
+                    const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
@@ -107,9 +108,14 @@ class Profile extends StatelessWidget {
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
+                    const SizedBox(
+                      height: 12,
+                    ),
                   ],
-                ))
-          ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

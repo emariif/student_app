@@ -195,7 +195,8 @@ class _HomeState extends State<Home> {
                               decoration: BoxDecoration(
                                   color: Colors.white,
                                   border: Border.all(
-                                      color: const Color.fromARGB(227, 205, 205, 205),
+                                      color: const Color.fromARGB(
+                                          227, 205, 205, 205),
                                       width: 1),
                                   borderRadius: BorderRadius.circular(10),
                                   boxShadow: [
@@ -218,7 +219,8 @@ class _HomeState extends State<Home> {
                                       ),
                                       Text(
                                         jadwal.waktu,
-                                        style: const TextStyle(color: Colors.black38),
+                                        style: const TextStyle(
+                                            color: Colors.black38),
                                       ),
                                       const SizedBox(
                                         width: 20,
@@ -232,7 +234,8 @@ class _HomeState extends State<Home> {
                                       ),
                                       Text(
                                         jadwal.gedung,
-                                        style: const TextStyle(color: Colors.black38),
+                                        style: const TextStyle(
+                                            color: Colors.black38),
                                       ),
                                     ],
                                   ),
@@ -307,16 +310,17 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 24),
-                child: LayoutBuilder(builder:
-                    (BuildContext context, BoxConstraints constraints) {
-                  if (constraints.maxWidth <= 600) {
-                    return const MenuGridView(gridCount: 4);
-                  } else if(constraints.maxWidth <= 1200) {
-                    return const MenuGridView(gridCount: 6);
-                  } else {
-                    return const MenuGridView(gridCount: 8);
-                  }
-                }),
+                child: LayoutBuilder(
+                  builder: (BuildContext context, BoxConstraints constraints) {
+                    if (constraints.maxWidth <= 600) {
+                      return const MenuGridView(gridCount: 4);
+                    } else if (constraints.maxWidth <= 1200) {
+                      return const MenuGridView(gridCount: 6);
+                    } else {
+                      return const MenuGridView(gridCount: 8);
+                    }
+                  },
+                ),
               ),
             ],
           ),
